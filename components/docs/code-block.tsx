@@ -34,7 +34,7 @@ export function CodeBlock({ tabs, code, language = "json", title }: CodeBlockPro
                 <button
                   key={tab.label}
                   onClick={() => setActiveTab(i)}
-                  className={`px-2.5 py-1 rounded text-[11px] transition-colors ${
+                  className={`px-2.5 py-1 rounded text-[11px] transition-colors cursor-pointer ${
                     activeTab === i
                       ? "bg-white/[0.1] text-white font-medium"
                       : "text-gray-400 hover:text-gray-200"
@@ -54,7 +54,7 @@ export function CodeBlock({ tabs, code, language = "json", title }: CodeBlockPro
 
         <button
           onClick={handleCopy}
-          className="flex items-center gap-1 text-[11px] text-gray-400 hover:text-white transition-colors p-1 rounded"
+          className="flex items-center gap-1 text-[11px] text-gray-400 hover:text-white transition-colors p-1 rounded cursor-pointer"
           title="Copy code"
           aria-label="Copy code"
         >

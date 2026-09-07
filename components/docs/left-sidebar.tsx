@@ -35,7 +35,7 @@ export function LeftSidebar({
                         if (onCloseMobile) onCloseMobile();
                       }}
                       className={cn(
-                        "group flex items-center justify-between w-full px-2.5 py-1.5 rounded-md text-[13.5px] transition-colors text-left",
+                        "group flex items-center justify-between w-full px-2.5 py-1.5 rounded-md text-[13.5px] transition-colors text-left cursor-pointer",
                         isActive
                           ? "bg-zinc-100 dark:bg-zinc-800/80 font-medium text-zinc-900 dark:text-zinc-100"
                           : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200 hover:bg-zinc-50 dark:hover:bg-zinc-800/40"

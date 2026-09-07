@@ -52,7 +52,7 @@ export function TocSidebar({
                   if (onHeadingClick) onHeadingClick(item.id);
                 }}
                 className={cn(
-                  "block pl-4 transition-colors leading-snug py-0.5",
+                  "block pl-4 transition-colors leading-snug py-0.5 cursor-pointer",
                   isActive
                     ? "text-zinc-950 dark:text-zinc-50 font-medium"
                     : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200"
