@@ -33,10 +33,10 @@ export const metadata: Metadata = {
     siteName: "Multipu Developer Documentation",
     images: [
       {
-        url: "/logo.png",
-        width: 800,
-        height: 800,
-        alt: "Multipu Developer Documentation",
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Multipu Developer Documentation - The Multi-Chain API & MCP Protocol",
       },
     ],
     locale: "en_US",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "Multipu Developer Docs | API & MCP Protocol",
     description:
       "Developer documentation for Multipu REST API and KeeperHub Model Context Protocol (MCP).",
-    images: ["/logo.png"],
+    images: ["/og.png"],
   },
 };
 
