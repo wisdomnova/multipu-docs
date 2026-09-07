@@ -98,7 +98,7 @@ export function TopNav({
 
             {/* GitHub Repo */}
             <a
-              href="https://github.com/wisdomnova/multipu"
+              href="https://github.com/wisdomnova/multipu-docs"
               target="_blank"
               rel="noopener noreferrer"
               className="p-1.5 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-colors cursor-pointer"

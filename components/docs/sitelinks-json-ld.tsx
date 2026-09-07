@@ -36,7 +36,6 @@ export function SitelinksJsonLd() {
           "KeeperHub MCP Server",
           "REST Endpoints",
           "Rate Limits & Quotas",
-          "TypeScript SDK",
           "Changelog"
         ],
         "url": [
@@ -46,7 +45,6 @@ export function SitelinksJsonLd() {
           "https://docs.multipu.fun/#keeperhub-mcp",
           "https://docs.multipu.fun/#endpoint-tokens",
           "https://docs.multipu.fun/#rate-limits",
-          "https://docs.multipu.fun/#sdk-typescript",
           "https://docs.multipu.fun/#changelog"
         ]
       },

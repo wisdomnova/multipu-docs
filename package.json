@@ -1,6 +1,27 @@
 {
   "name": "multipu-docs",
   "version": "0.1.0",
+  "description": "Developer documentation portal for Multipu REST API & KeeperHub MCP Server Protocol",
+  "homepage": "https://docs.multipu.fun",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wisdomnova/multipu-docs.git"
+  },
+  "keywords": [
+    "multipu",
+    "developer-documentation",
+    "rest-api",
+    "mcp-server",
+    "model-context-protocol",
+    "solana",
+    "bnb-chain",
+    "robinhood-chain",
+    "pumpfun",
+    "meteora-dlmm",
+    "bags-app",
+    "four-meme",
+    "pons-protocol"
+  ],
   "private": true,
   "scripts": {
     "dev": "next dev",

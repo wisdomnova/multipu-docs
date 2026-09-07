@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { SitelinksJsonLd } from "@/components/docs/sitelinks-json-ld";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,9 +15,30 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://docs.multipu.fun"),
-  title: "Multipu Developer Documentation - REST API & KeeperHub MCP",
+  title: "Multipu Developer Documentation - REST API & KeeperHub MCP Protocol",
   description:
-    "Developer documentation, REST API endpoints, KeeperHub Model Context Protocol (MCP) tool schemas, and multi-chain launch orchestration guide.",
+    "Official developer documentation for Multipu. Comprehensive REST API specifications, KeeperHub Model Context Protocol (MCP) AI agent tools, and multi-chain launchpad orchestrator integration guide.",
+  keywords: [
+    "Multipu",
+    "Multipu Docs",
+    "Multipu API",
+    "KeeperHub MCP",
+    "Model Context Protocol",
+    "Solana launchpad API",
+    "Meteora DLMM",
+    "Pump.fun API",
+    "Bags App",
+    "Four.meme",
+    "Pons Protocol",
+    "Robinhood Chain",
+    "AI Agent Trading",
+    "OlaXBT Signals",
+    "DeFi API",
+    "Token Launch Orchestrator",
+  ],
+  authors: [{ name: "Multipu Engineering", url: "https://multipu.fun" }],
+  creator: "Multipu",
+  publisher: "Multipu",
   alternates: {
     canonical: "https://docs.multipu.fun",
   },
@@ -26,16 +48,17 @@ export const metadata: Metadata = {
     apple: "/logo.png",
   },
   openGraph: {
-    title: "Multipu Developer Docs | API & MCP Protocol",
+    title: "Multipu Developer Docs | REST API & KeeperHub MCP Protocol",
     description:
-      "Automate token creation, multi-launchpad dispatching, and agent market telemetry with Multipu API & KeeperHub MCP server.",
+      "Automate token creation, multi-launchpad dispatching, and agent market telemetry with Multipu REST API and KeeperHub Model Context Protocol (MCP) server.",
     url: "https://docs.multipu.fun",
     siteName: "Multipu Developer Documentation",
     images: [
       {
-        url: "/og.png",
+        url: "https://docs.multipu.fun/og.png",
         width: 1200,
         height: 630,
+        type: "image/png",
         alt: "Multipu Developer Documentation - The Multi-Chain API & MCP Protocol",
       },
     ],
@@ -44,14 +67,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Multipu Developer Docs | API & MCP Protocol",
+    title: "Multipu Developer Docs | REST API & KeeperHub MCP Protocol",
     description:
-      "Developer documentation for Multipu REST API and KeeperHub Model Context Protocol (MCP).",
-    images: ["/og.png"],
+      "Official developer documentation for Multipu REST API & KeeperHub MCP server for AI agents.",
+    images: ["https://docs.multipu.fun/og.png"],
+    creator: "@multipu",
   },
 };
-
-import { SitelinksJsonLd } from "@/components/docs/sitelinks-json-ld";
 
 export default function RootLayout({
   children,

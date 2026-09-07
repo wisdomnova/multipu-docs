@@ -240,7 +240,7 @@ export function ContentView({ section, onNavigateSection }: ContentViewProps) {
           <span>Documentation updated for Multipu v0.1.0</span>
         </div>
         <a
-          href="https://github.com/multipu/multipu"
+          href="https://github.com/wisdomnova/multipu-docs"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"

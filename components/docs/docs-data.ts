@@ -88,7 +88,6 @@ export const navGroups: NavGroup[] = [
     items: [
       { id: "rate-limits", title: "Rate Limits & Quotas" },
       { id: "error-codes", title: "Error Codes & Statuses" },
-      { id: "sdk-typescript", title: "TypeScript SDK" },
       { id: "changelog", title: "Changelog" },
     ],
   },
@@ -146,23 +145,25 @@ export const docSections: Record<string, DocSection> = {
   }'`,
         },
         {
-          label: "TypeScript",
+          label: "TypeScript (Fetch)",
           language: "typescript",
-          code: `import { MultipuClient } from "@multipu/sdk";
-
-const client = new MultipuClient({
-  apiKey: process.env.MULTIPU_API_KEY!,
+          code: `const response = await fetch("https://multipu.fun/api/tokens", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "x-api-key": process.env.MULTIPU_API_KEY!,
+  },
+  body: JSON.stringify({
+    name: "Pepe Quantum",
+    symbol: "PEPEQ",
+    supply: "1000000000",
+    decimals: 9,
+    description: "Next generation AI-curated meme token.",
+  }),
 });
 
-const token = await client.tokens.create({
-  name: "Pepe Quantum",
-  symbol: "PEPEQ",
-  supply: "1000000000",
-  decimals: 9,
-  description: "Next generation AI-curated meme token.",
-});
-
-console.log("Created draft token ID:", token.id);`,
+const data = await response.json();
+console.log("Created draft token ID:", data.token?.id);`,
         },
         {
           label: "Python",
@@ -560,26 +561,6 @@ Content-Type: application/json`,
     toc: [
       { id: "error-intro", title: "Error Codes Overview" },
       { id: "codes-table", title: "Standard Error Codes" },
-    ],
-  },
-
-  "sdk-typescript": {
-    id: "sdk-typescript",
-    category: "Developers",
-    title: "TypeScript SDK (@multipu/sdk)",
-    description:
-      "The official TypeScript client provides strong types, automatic challenge signing for SIWS/SIWB, and built-in retry mechanisms.",
-    codeSnippet: {
-      language: "bash",
-      title: "Installation",
-      code: `npm install @multipu/sdk
-# or
-pnpm add @multipu/sdk`,
-    },
-    toc: [
-      { id: "sdk-intro", title: "TypeScript SDK" },
-      { id: "install", title: "Installation" },
-      { id: "client-methods", title: "Client Methods" },
     ],
   },
 
