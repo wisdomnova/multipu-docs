@@ -4,8 +4,7 @@ import React from "react";
 import { DocSection } from "./docs-data";
 import { CodeBlock } from "./code-block";
 import { InteractiveTester } from "./interactive-tester";
-import Image from "next/image";
-import { IconChevronRight, IconArrowUpRight, IconShieldLock, IconBolt, IconServer } from "@tabler/icons-react";
+import { IconChevronRight, IconArrowUpRight } from "@tabler/icons-react";
 
 interface ContentViewProps {
   section: DocSection;
@@ -73,37 +72,22 @@ export function ContentView({ section, onNavigateSection }: ContentViewProps) {
               Supported Chains & Launchpads
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
-              <div className="p-4 rounded-xl border border-zinc-200/90 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30 space-y-2">
-                <div className="flex items-center gap-2">
-                  <div className="h-6 w-6 rounded-full bg-purple-500/10 dark:bg-purple-500/20 flex items-center justify-center text-purple-600 dark:text-purple-400 font-bold text-xs">
-                    SOL
-                  </div>
-                  <h3 className="font-semibold text-sm text-zinc-900 dark:text-zinc-100">Solana</h3>
-                </div>
+              <div className="p-4 rounded-xl border border-zinc-200/90 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30 space-y-1.5">
+                <h3 className="font-semibold text-sm text-zinc-900 dark:text-zinc-100">Solana</h3>
                 <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
                   Pump.fun, Meteora DLMM, and Bags fair launch curves with sub-second finality.
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl border border-zinc-200/90 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30 space-y-2">
-                <div className="flex items-center gap-2">
-                  <div className="h-6 w-6 rounded-full bg-amber-500/10 dark:bg-amber-500/20 flex items-center justify-center text-amber-600 dark:text-amber-400 font-bold text-xs">
-                    BNB
-                  </div>
-                  <h3 className="font-semibold text-sm text-zinc-900 dark:text-zinc-100">BNB Chain</h3>
-                </div>
+              <div className="p-4 rounded-xl border border-zinc-200/90 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30 space-y-1.5">
+                <h3 className="font-semibold text-sm text-zinc-900 dark:text-zinc-100">BNB Chain</h3>
                 <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
                   Four.meme bonding curve integration with low gas overhead.
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl border border-zinc-200/90 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30 space-y-2">
-                <div className="flex items-center gap-2">
-                  <div className="h-6 w-6 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold text-xs">
-                    RH
-                  </div>
-                  <h3 className="font-semibold text-sm text-zinc-900 dark:text-zinc-100">Robinhood Chain</h3>
-                </div>
+              <div className="p-4 rounded-xl border border-zinc-200/90 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30 space-y-1.5">
+                <h3 className="font-semibold text-sm text-zinc-900 dark:text-zinc-100">Robinhood Chain</h3>
                 <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
                   Pons Protocol sequencer with fair time-prioritization ordering.
                 </p>
@@ -119,35 +103,27 @@ export function ContentView({ section, onNavigateSection }: ContentViewProps) {
               <button
                 type="button"
                 onClick={() => onNavigateSection && onNavigateSection("quickstart")}
-                className="flex items-center justify-between p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 bg-white dark:bg-zinc-900/50 text-left transition-all group"
+                className="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 bg-white dark:bg-zinc-900/50 text-left transition-all cursor-pointer group"
               >
-                <div>
-                  <div className="text-xs font-semibold text-zinc-900 dark:text-zinc-100 flex items-center gap-1.5">
-                    <IconBolt className="w-4 h-4 text-amber-500" />
-                    Quickstart Guide
-                  </div>
-                  <div className="text-[12px] text-zinc-500 mt-1">
-                    Deploy your first token in 5 minutes
-                  </div>
+                <div className="text-sm font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-950 dark:group-hover:text-white transition-colors">
+                  Quickstart Guide
                 </div>
-                <IconChevronRight className="w-4 h-4 text-zinc-400 group-hover:translate-x-0.5 transition-transform" />
+                <div className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+                  Deploy your first token in 5 minutes
+                </div>
               </button>
 
               <button
                 type="button"
                 onClick={() => onNavigateSection && onNavigateSection("keeperhub-mcp")}
-                className="flex items-center justify-between p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 bg-white dark:bg-zinc-900/50 text-left transition-all group"
+                className="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 bg-white dark:bg-zinc-900/50 text-left transition-all cursor-pointer group"
               >
-                <div>
-                  <div className="text-xs font-semibold text-zinc-900 dark:text-zinc-100 flex items-center gap-1.5">
-                    <IconServer className="w-4 h-4 text-indigo-500" />
-                    KeeperHub MCP Setup
-                  </div>
-                  <div className="text-[12px] text-zinc-500 mt-1">
-                    Plug AI agents directly into market tools
-                  </div>
+                <div className="text-sm font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-950 dark:group-hover:text-white transition-colors">
+                  KeeperHub MCP Setup
                 </div>
-                <IconChevronRight className="w-4 h-4 text-zinc-400 group-hover:translate-x-0.5 transition-transform" />
+                <div className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
+                  Plug AI agents directly into market tools
+                </div>
               </button>
             </div>
           </section>
