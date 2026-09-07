@@ -8,6 +8,12 @@
 [![Next.js](https://img.shields.io/badge/Next.js-16.3-black?style=flat&logo=next.js)](https://nextjs.org)
 [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v4-38bdf8?style=flat&logo=tailwindcss)](https://tailwindcss.com)
 
+<br />
+
+<p align="center">
+  <img src="public/og.png" alt="Multipu Developer Documentation Banner" width="100%" />
+</p>
+
 ---
 
 ## 📖 Overview
