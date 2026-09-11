@@ -85,6 +85,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
     >
       <head>
@@ -104,7 +105,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#121212] text-white selection:bg-purple-600 selection:text-white">
+      <body className="min-h-full flex flex-col bg-white dark:bg-[#121212] text-zinc-900 dark:text-white selection:bg-purple-600 selection:text-white transition-colors duration-200">
         <SitelinksJsonLd />
         {children}
         <Analytics />

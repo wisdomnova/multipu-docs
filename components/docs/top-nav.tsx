@@ -29,7 +29,7 @@ export function TopNav({
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-white/[0.06] bg-[#121212]/90 backdrop-blur-md transition-colors">
+    <header className="sticky top-0 z-40 w-full border-b border-zinc-200/80 dark:border-white/[0.06] bg-white/90 dark:bg-[#121212]/90 backdrop-blur-md transition-colors duration-200">
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
         {/* Left: Brand Logo, Title & Docs Badge */}
         <div className="flex items-center gap-3">
@@ -48,19 +48,19 @@ export function TopNav({
                 priority
               />
             </div>
-            <span className="text-[15px] font-bold tracking-tight text-white">
+            <span className="text-[15px] font-bold tracking-tight text-zinc-950 dark:text-white">
               Multipu
             </span>
           </button>
           
-          <span className="inline-flex items-center px-2 py-0.5 text-[10px] font-mono font-medium rounded-full bg-white/[0.06] text-zinc-300 border border-white/[0.08]">
+          <span className="inline-flex items-center px-2 py-0.5 text-[10px] font-mono font-medium rounded-full bg-zinc-100 dark:bg-white/[0.06] text-zinc-600 dark:text-zinc-300 border border-zinc-200 dark:border-white/[0.08]">
             DOCS
           </span>
         </div>
 
         {/* Right Area: Navigation Links, Divider, Actions */}
         <div className="flex items-center gap-4 sm:gap-6">
-          <nav className="hidden md:flex items-center gap-1.5 text-xs text-zinc-400">
+          <nav className="hidden md:flex items-center gap-1.5 text-xs text-zinc-600 dark:text-zinc-400">
             {topLinks.map((link) => {
               const isActive =
                 (link.id === "introduction" && (currentSection === "introduction" || currentSection === "quickstart")) ||
@@ -75,8 +75,8 @@ export function TopNav({
                   onClick={() => onSelectSection(link.id)}
                   className={`px-3 py-1.5 rounded-full transition-all cursor-pointer text-xs ${
                     isActive
-                      ? "text-white font-medium bg-white/[0.08] border border-white/[0.08] shadow-xs"
-                      : "text-zinc-400 hover:text-white hover:bg-white/[0.04]"
+                      ? "text-zinc-950 dark:text-white font-medium bg-zinc-100 dark:bg-white/[0.08] border border-zinc-200/80 dark:border-white/[0.08] shadow-xs"
+                      : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100/60 dark:hover:bg-white/[0.04]"
                   }`}
                 >
                   {link.label}
@@ -85,7 +85,7 @@ export function TopNav({
             })}
           </nav>
 
-          <div className="hidden sm:block h-4 w-[1px] bg-white/[0.08]" />
+          <div className="hidden sm:block h-4 w-[1px] bg-zinc-200 dark:bg-white/[0.08]" />
 
           <div className="flex items-center gap-2">
             {/* Launch App Pill Button */}
@@ -93,7 +93,7 @@ export function TopNav({
               href="https://multipu.fun"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full bg-white text-black font-semibold text-xs hover:bg-zinc-200 active:scale-95 transition-all shadow-xs"
+              className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full bg-zinc-900 text-white dark:bg-white dark:text-black font-semibold text-xs hover:bg-zinc-800 dark:hover:bg-zinc-200 active:scale-95 transition-all shadow-xs"
             >
               <span>Launch App</span>
               <IconArrowUpRight size={13} stroke={2.5} />
@@ -103,7 +103,7 @@ export function TopNav({
             <button
               type="button"
               onClick={toggleTheme}
-              className="p-2 text-zinc-400 hover:text-white rounded-full hover:bg-white/[0.06] transition-colors cursor-pointer"
+              className="p-2 text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white rounded-full hover:bg-zinc-100 dark:hover:bg-white/[0.06] transition-colors cursor-pointer"
               title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
               aria-label="Toggle color theme"
             >
@@ -115,7 +115,7 @@ export function TopNav({
               href="https://github.com/wisdomnova/multipu-docs"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-zinc-400 hover:text-white rounded-full hover:bg-white/[0.06] transition-colors cursor-pointer"
+              className="p-2 text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white rounded-full hover:bg-zinc-100 dark:hover:bg-white/[0.06] transition-colors cursor-pointer"
               title="GitHub Repository"
               aria-label="GitHub"
             >
@@ -126,7 +126,7 @@ export function TopNav({
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-zinc-400 hover:text-white rounded-full hover:bg-white/[0.06] transition-colors cursor-pointer"
+              className="md:hidden p-2 text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white rounded-full hover:bg-zinc-100 dark:hover:bg-white/[0.06] transition-colors cursor-pointer"
               aria-label="Toggle documentation navigation menu"
             >
               {mobileMenuOpen ? <IconX size={18} /> : <IconMenu2 size={18} />}

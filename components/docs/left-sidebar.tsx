@@ -19,13 +19,13 @@ export function LeftSidebar({
     if (!badge) return "";
     switch (badge) {
       case "GET":
-        return "bg-emerald-500/10 text-emerald-400 border-emerald-500/20";
+        return "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20";
       case "POST":
-        return "bg-purple-500/10 text-purple-400 border-purple-500/20";
+        return "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20";
       case "MCP":
-        return "bg-violet-500/10 text-violet-300 border-violet-500/20";
+        return "bg-violet-500/10 text-violet-600 dark:text-violet-300 border-violet-500/20";
       default:
-        return "bg-white/[0.06] text-zinc-400 border-white/[0.08]";
+        return "bg-zinc-100 dark:bg-white/[0.06] text-zinc-600 dark:text-zinc-400 border-zinc-200 dark:border-white/[0.08]";
     }
   };
 
@@ -34,7 +34,7 @@ export function LeftSidebar({
       <div className="space-y-6">
         {navGroups.map((group) => (
           <div key={group.name} className="space-y-1">
-            <div className="text-[10px] font-mono uppercase tracking-wider text-zinc-500 font-semibold px-2.5 py-1">
+            <div className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500 font-semibold px-2.5 py-1">
               {group.name}
             </div>
             <ul className="space-y-0.5">
@@ -51,13 +51,13 @@ export function LeftSidebar({
                       className={cn(
                         "group flex items-center justify-between w-full px-2.5 py-1.5 rounded-xl text-[13px] transition-all text-left cursor-pointer",
                         isActive
-                          ? "bg-[#181818] border border-white/[0.08] font-medium text-white shadow-xs"
-                          : "text-zinc-400 hover:text-white hover:bg-white/[0.03] border border-transparent"
+                          ? "bg-zinc-100 dark:bg-[#181818] border border-zinc-200 dark:border-white/[0.08] font-medium text-zinc-950 dark:text-white shadow-xs"
+                          : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100/60 dark:hover:bg-white/[0.03] border border-transparent"
                       )}
                     >
                       <span className="flex items-center gap-2 truncate">
                         {isActive && (
-                          <span className="h-1.5 w-1.5 rounded-full bg-purple-400 shrink-0" />
+                          <span className="h-1.5 w-1.5 rounded-full bg-purple-500 dark:bg-purple-400 shrink-0" />
                         )}
                         <span className={isActive ? "translate-x-0 truncate" : "pl-3.5 truncate"}>
                           {item.title}

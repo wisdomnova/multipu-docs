@@ -29,16 +29,16 @@ export function TocSidebar({
 
   return (
     <div className="py-6 px-4 md:px-5 sticky top-16">
-      <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 font-semibold mb-3.5">
+      <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-500 font-semibold mb-3.5">
         On this page
       </div>
-      <ul className="space-y-1.5 text-[12.5px] border-l border-white/[0.08]">
+      <ul className="space-y-1.5 text-[12.5px] border-l border-zinc-200 dark:border-white/[0.08]">
         {items.map((item) => {
           const isActive = activeId === item.id;
           return (
             <li key={item.id} className="relative">
               {isActive && (
-                <div className="absolute -left-[1px] top-0 bottom-0 w-[2px] bg-purple-400 rounded-full shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
+                <div className="absolute -left-[1px] top-0 bottom-0 w-[2px] bg-purple-500 dark:bg-purple-400 rounded-full shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
               )}
               <a
                 href={`#${item.id}`}
@@ -54,8 +54,8 @@ export function TocSidebar({
                 className={cn(
                   "block pl-3.5 transition-colors leading-snug py-0.5 cursor-pointer text-left",
                   isActive
-                    ? "text-white font-medium"
-                    : "text-zinc-400 hover:text-white"
+                    ? "text-zinc-950 dark:text-white font-medium"
+                    : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white"
                 )}
               >
                 {item.title}
