@@ -80,85 +80,91 @@ export function InteractiveTester({
     }
   };
 
+  const isGet = method === "GET";
+
   return (
-    <div className="mt-8 rounded-xl border border-zinc-200/90 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/40 p-5 space-y-4">
-      <div className="flex items-center justify-between">
+    <div className="mt-8 rounded-2xl border border-white/[0.08] bg-[#181818] p-5 sm:p-6 space-y-5 shadow-2xl">
+      <div className="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-white/[0.06]">
         <div className="flex items-center gap-2">
-          <span className="px-2 py-0.5 text-xs font-mono font-bold rounded bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 uppercase">
+          <span
+            className={`px-2.5 py-0.5 text-xs font-mono font-bold rounded-md border uppercase ${
+              isGet
+                ? "bg-emerald-500/15 text-emerald-400 border-emerald-500/30"
+                : "bg-purple-500/15 text-purple-400 border-purple-500/30"
+            }`}
+          >
             {method}
           </span>
-          <span className="font-mono text-xs text-zinc-700 dark:text-zinc-300">
+          <span className="font-mono text-xs text-zinc-300 bg-[#121212] px-2.5 py-1 rounded-lg border border-white/[0.06]">
             {endpoint}
           </span>
         </div>
-        <span className="text-[11px] text-zinc-600 dark:text-zinc-300 font-medium">
+        <span className="text-[11px] font-mono text-zinc-400 px-2.5 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.06]">
           Live Sandbox Tester
         </span>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="space-y-2">
-          <label className="text-[11px] font-semibold text-zinc-700 dark:text-zinc-300 uppercase tracking-wider">
+        <div className="space-y-1.5">
+          <label className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 font-semibold">
             API Key (x-api-key header)
           </label>
           <input
             type="text"
             value={apiKey}
             onChange={(e) => setApiKey(e.target.value)}
-            className="w-full text-xs font-mono px-3 py-2 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-1 focus:ring-zinc-400"
+            className="w-full text-xs font-mono px-3 py-2 rounded-xl border border-white/[0.08] bg-[#141414] text-white focus:outline-none focus:border-purple-500/60 focus:ring-1 focus:ring-purple-500/30 transition-all placeholder:text-zinc-600"
             placeholder="mp_live_..."
           />
         </div>
 
-        <div className="space-y-2">
-          <label className="text-[11px] font-semibold text-zinc-700 dark:text-zinc-300 uppercase tracking-wider">
+        <div className="space-y-1.5">
+          <label className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 font-semibold">
             Target Environment
           </label>
-          <div className="flex items-center gap-2 h-[35px] text-xs font-mono text-zinc-600 dark:text-zinc-400">
-            <span className="h-2 w-2 rounded-full bg-emerald-500 inline-block"></span>
-            <span>https://multipu.fun (Devnet & Mainnet-beta)</span>
+          <div className="flex items-center gap-2 h-[35px] px-3 rounded-xl border border-white/[0.08] bg-[#141414] text-xs font-mono text-zinc-300">
+            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse inline-block shrink-0"></span>
+            <span className="truncate">https://multipu.fun (Devnet & Mainnet)</span>
           </div>
         </div>
       </div>
 
-      {method !== "GET" && (
+      {!isGet && (
         <div className="space-y-1.5">
-          <label className="text-[11px] font-semibold text-zinc-700 dark:text-zinc-300 uppercase tracking-wider">
+          <label className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 font-semibold">
             Request Body (JSON)
           </label>
           <textarea
             value={payload}
             onChange={(e) => setPayload(e.target.value)}
             rows={5}
-            className="w-full text-xs font-mono p-3 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-1 focus:ring-zinc-400 leading-relaxed resize-none"
+            className="w-full text-xs font-mono p-3 rounded-xl border border-white/[0.08] bg-[#141414] text-zinc-200 focus:outline-none focus:border-purple-500/60 focus:ring-1 focus:ring-purple-500/30 leading-relaxed resize-none transition-all"
           />
         </div>
       )}
 
-      <div className="flex items-center justify-between pt-2">
+      <div className="flex items-center justify-between pt-1">
         <button
           type="button"
           onClick={handleTest}
           disabled={loading}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 text-xs font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors disabled:opacity-50 cursor-pointer"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-zinc-200 active:scale-95 transition-all disabled:opacity-50 cursor-pointer shadow-md"
         >
-          <IconPlayerPlay className="w-3.5 h-3.5" />
+          <IconPlayerPlay className="w-3.5 h-3.5 fill-current" />
           {loading ? "Executing Request..." : "Send Request"}
         </button>
       </div>
 
       {responseBody && (
-        <div className="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800 space-y-2">
+        <div className="mt-4 pt-4 border-t border-white/[0.06] space-y-2">
           <div className="flex items-center justify-between text-xs">
             <div className="flex items-center gap-2">
-              <span className="font-semibold text-zinc-700 dark:text-zinc-300">
-                Response Status:
-              </span>
+              <span className="text-zinc-400 font-medium">Response Status:</span>
               <span
-                className={`font-mono px-2 py-0.5 rounded text-[11px] font-bold ${
+                className={`font-mono px-2.5 py-0.5 rounded-full text-[11px] font-bold border ${
                   responseStatus === 200
-                    ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-400"
-                    : "bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-400"
+                    ? "bg-emerald-500/15 text-emerald-400 border-emerald-500/30"
+                    : "bg-red-500/15 text-red-400 border-red-500/30"
                 }`}
               >
                 {responseStatus} OK
@@ -167,12 +173,12 @@ export function InteractiveTester({
             <button
               type="button"
               onClick={handleCopyResponse}
-              className="flex items-center gap-1 text-[11px] text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 text-[11px] text-zinc-400 hover:text-white transition-colors cursor-pointer px-2.5 py-1 rounded-full hover:bg-white/[0.06]"
             >
               {copied ? (
                 <>
-                  <IconCheck className="w-3 h-3 text-emerald-500" />
-                  <span>Copied</span>
+                  <IconCheck className="w-3 h-3 text-emerald-400" />
+                  <span className="text-emerald-400">Copied</span>
                 </>
               ) : (
                 <>
@@ -182,7 +188,7 @@ export function InteractiveTester({
               )}
             </button>
           </div>
-          <pre className="p-3 text-xs font-mono rounded-lg bg-zinc-900 text-zinc-100 dark:bg-black overflow-x-auto">
+          <pre className="p-4 text-xs font-mono rounded-xl bg-[#101010] text-zinc-300 border border-white/[0.06] overflow-x-auto leading-relaxed">
             {responseBody}
           </pre>
         </div>

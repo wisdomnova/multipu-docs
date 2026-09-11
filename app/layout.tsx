@@ -85,7 +85,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
     >
       <head>
         {/* Google tag (gtag.js) */}
@@ -104,7 +104,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-[#121212] text-white selection:bg-purple-600 selection:text-white">
         <SitelinksJsonLd />
         {children}
         <Analytics />
