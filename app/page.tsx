@@ -48,12 +48,6 @@ export default function DocsPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-[#121212] text-zinc-900 dark:text-white selection:bg-purple-600 selection:text-white relative transition-colors duration-200">
-      {/* Background dot matrix grid matching Multipu landing */}
-      <div 
-        className="fixed inset-0 bg-[radial-gradient(rgba(0,0,0,0.07)_1.1px,transparent_1.1px)] dark:bg-[radial-gradient(rgba(255,255,255,0.12)_1.1px,transparent_1.1px)] [background-size:22px_22px] pointer-events-none opacity-60 z-0 transition-opacity" 
-        aria-hidden="true" 
-      />
-
       {/* Top Header Navigation */}
       <TopNav
         currentSection={activeSectionId}
